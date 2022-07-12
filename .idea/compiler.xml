@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="advert-service" />
+        <module name="notification-service" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>

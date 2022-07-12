@@ -1,15 +1,15 @@
 server:
-  port: 8080
+  port: 8082
 
 queue:
   name: advert-queue
 
 spring:
   application:
-    name: advert-service
+    name: notification-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/advert
+    url: jdbc:postgresql://localhost:5432/notification
     username: admin
     password: admin
 
@@ -29,5 +29,3 @@ spring:
     port: 5672
     username: guest
     password: guest
-
-

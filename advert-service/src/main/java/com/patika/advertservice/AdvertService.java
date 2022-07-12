@@ -1,5 +1,6 @@
 package com.patika.advertservice;
 
+import com.patika.advertservice.messaging.MessagingService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -8,9 +9,11 @@ import java.time.LocalDateTime;
 public class AdvertService {
 
     private final AdvertRepository advertRepository;
+    private final MessagingService messagingService;
 
-    public AdvertService(AdvertRepository advertRepository) {
+    public AdvertService(AdvertRepository advertRepository, MessagingService messagingService) {
         this.advertRepository = advertRepository;
+        this.messagingService = messagingService;
     }
 
 
@@ -25,6 +28,8 @@ public class AdvertService {
                 .build();
 
         advertRepository.saveAndFlush(createdAdvert);
+
+        messagingService.sendMessage(createdAdvert);
 
         return AdvertResponse.builder()
                 .id(createdAdvert.getId())

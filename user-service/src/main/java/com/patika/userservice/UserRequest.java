@@ -1,10 +1,12 @@
 package com.patika.userservice;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserRequest {
     private String name;
     private String username;
